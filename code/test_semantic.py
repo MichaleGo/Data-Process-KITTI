@@ -4,12 +4,12 @@ import numpy as np
 
 def main():
     print('semantic')
-    semanticfile = '/home/mcislab/gaoxiangjun/xiangjun/single_view_depth/data_semantics/training/semantic/000199_10.png'
+    semanticfile = '/media/dongyanmei/2cb88bc6-316c-44b1-b0fd-4fc8fbf2c17f/xiangjun/single_view_depth/data_semantics/training/semantic/000199_10.png'
     semantic = np.array(Image.open(semanticfile))
     print(semantic[200:205, 600:605])
 
     print('disp_png')
-    dispfile = '/home/mcislab/gaoxiangjun/xiangjun/single_view_depth/data_scene_flow/training/disp_noc_0/000199_10.png'
+    dispfile = '/media/dongyanmei/2cb88bc6-316c-44b1-b0fd-4fc8fbf2c17f/xiangjun/single_view_depth/data_scene_flow/training/disp_noc_0/000199_10.png'
     disp_png = np.array(Image.open(dispfile), dtype=np.uint16)
     print(disp_png[200:205, 600:605])
 
@@ -24,14 +24,14 @@ def main():
     print('depth_from_disp')
     print(depth[200:205, 600:605])
 
-    depthfile = '/home/mcislab/gaoxiangjun/xiangjun/kitti_raw/data_depth_velodyne/val/2011_10_03_drive_0047_sync/proj_depth/velodyne_raw/image_02/0000000556.png'
+    depthfile = '/media/dongyanmei/2cb88bc6-316c-44b1-b0fd-4fc8fbf2c17f/xiangjun/kitti_raw/data_depth_velodyne/val/2011_10_03_drive_0047_sync/proj_depth/velodyne_raw/image_02/0000000556.png'
     depth_png = np.array(Image.open(depthfile), dtype=int)
     depth = depth_png.astype(np.float32) / 256
     depth[depth_png == 0] = -1
     print('kitti_raw_depth')
     print(depth[200:205, 600:605])
 
-    depthfile = '/home/mcislab/gaoxiangjun/xiangjun/single_view_depth/data_depth_annotated/val/2011_10_03_drive_0047_sync/proj_depth/groundtruth/image_02/0000000556.png'
+    depthfile = '/media/dongyanmei/2cb88bc6-316c-44b1-b0fd-4fc8fbf2c17f/xiangjun/single_view_depth/data_depth_annotated/val/2011_10_03_drive_0047_sync/proj_depth/groundtruth/image_02/0000000556.png'
     depth_png = np.array(Image.open(depthfile), dtype=int)
     depth = depth_png.astype(np.float32) / 256
     depth[depth_png == 0] = -1

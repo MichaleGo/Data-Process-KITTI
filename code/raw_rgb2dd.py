@@ -1,5 +1,5 @@
 '''
-目的：处理双目视觉所需要的数据，产生RGB2DD（两张RGB，depth，由depth计算得到的disp）八个通道的图像
+目的：处理双目视觉所需要的数据，产生RGB2DD（两张RGB，由depth计算得到的disp， depth）八个通道的图像
 
 原始数据：
     From:
@@ -107,7 +107,7 @@ def main():
 
     for i, name in enumerate(depth_train_dir_list):
         print(i, name)
-        assert (name == depth_val_dir_list[i])
+        assert (name == depth_train_dir_list[i])
 
         # 深度图目录 路经，目录下是照片
         depth_dir_path = os.path.join(depth_train_dir_pre, name,
